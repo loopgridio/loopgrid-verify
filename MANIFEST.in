@@ -1,0 +1,9 @@
+include LICENSE
+include README.md
+include CHANGELOG.md
+include SECURITY.md
+include VALIDATION.md
+include RELEASE_CHECKLIST.md
+include FIXTURE_CHECKSUMS.sha256
+recursive-include scripts *.py
+recursive-include tests *.py *.zip *.pem
