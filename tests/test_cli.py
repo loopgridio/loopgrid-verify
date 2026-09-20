@@ -22,7 +22,7 @@ def test_cli_attested_bundle_exit_zero():
     )
     assert proc.returncode == 0, proc.stderr
     assert "[OK] VERIFIED" in proc.stdout
-    assert '"status": "attested"' in proc.stdout
+    assert "[DETAIL] Bundle integrity: attested" in proc.stdout
 
 
 def test_cli_tampered_bundle_exit_two():
@@ -33,7 +33,7 @@ def test_cli_tampered_bundle_exit_two():
     )
     assert proc.returncode == 2
     assert "[FAIL] INVALID" in proc.stdout
-    assert "bundle_file_digest_mismatch" in proc.stdout
+    assert "[DETAIL] Bundle file digest mismatch." in proc.stdout
 
 
 def test_cli_legacy_bundle_is_explicitly_labeled():
